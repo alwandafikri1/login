@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Welcome</h2>
+        <form action="/submit-login" method="POST">
+            <div class="input-box">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            // Username dan password yang diatur
+            const correctUsername = 'wanda';
+            const correctPassword = '12345';
+    
+            if (username !== correctUsername || password !== correctPassword) {
+                event.preventDefault(); // Mencegah pengiriman form
+                alert('Username atau Password salah!');
+            }
+        });
+    </script>
+   
+</body>
+</html>
